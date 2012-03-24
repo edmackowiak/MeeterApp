@@ -96,7 +96,7 @@ p{
     line-height: 1.5;
 }
 
-.notice{
+.notice, .flash{
     @include border-radius;
     background: #fff;
     padding: 15px;
