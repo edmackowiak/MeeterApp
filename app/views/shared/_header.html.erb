@@ -9,6 +9,7 @@
   <nav>
     <ul
       <% if current_user %>
+        <li><%= link_to "Dashboard", dashboard_path %></li>
         <li><%= link_to "Settings", show_user_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></li>
       <% else %>
