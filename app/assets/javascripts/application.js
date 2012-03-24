@@ -14,7 +14,5 @@
 //= require jquery_ujs
 //= require plugins
 //= require scripts
-//= require envision.min
-//= require finance
-//= require data
+//= require highcharts
 
