@@ -8,6 +8,9 @@ MeeterApp::Application.routes.draw do
   root :to => 'public_pages#home'
 
   match 'dashboard' => "private_pages#dashboard"
+  match 'show_user' => "users#show"
+
+  resource :user, :attendee
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

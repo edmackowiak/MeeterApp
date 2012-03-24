@@ -1,0 +1,25 @@
+<header>
+  <h1><%= @user.email %></h1>
+</header>
+
+<div class="content">
+  <article class="bubble">
+    
+    <p>
+      Name: <%= @attendee.name if @attendee  %>
+    </p>
+
+    <p>
+      Job Title: <%= @attendee.position if @attendee  %>
+    </p>
+
+    <p>
+      Hourly Rate: $<%= @attendee.hourly_rate if @attendee  %>.00
+    </p>
+
+    <p>
+      <%= link_to "Edit Information", edit_user_path(@user) %>
+    </p>
+
+  </article>
+</div>

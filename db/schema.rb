@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324063432) do
+ActiveRecord::Schema.define(:version => 20120324081019) do
 
   create_table "attendees", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120324063432) do
     t.integer  "meeting_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "position"
   end
 
   add_index "attendees", ["user_id"], :name => "index_attendees_on_user_id"
