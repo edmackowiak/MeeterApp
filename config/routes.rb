@@ -1,8 +1,12 @@
 MeeterApp::Application.routes.draw do
 
+  get "private_pages/dashboard"
+
   devise_for :users
 
   root :to => 'public_pages#home'
+
+  match 'dashboard' => "private_pages#dashboard"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
