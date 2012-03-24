@@ -4,7 +4,7 @@
 body{
     background: url(../images/noise.png) #e4e6e8;
     font-family: $helvetica;
-    color: $normal_text;
+    color: $light_text;
 }
 
 *{
@@ -64,6 +64,10 @@ a{
     text-decoration: none;
 }
 
+h1, h2, h3{
+    color: $normal_text;
+}
+
 // ******************************************************
 //  Header
 
@@ -116,6 +120,14 @@ header.primary{
             text-shadow: 0 1px #fff;
             line-height: 1;
         }
+        
+        p{
+            font-size: 16px;
+            color: lighten($light_text, 10%);
+            margin: 15px 0 0;
+            line-height: 1.4;
+            text-shadow: 0 1px #fff;
+        }
     }
     
     h2{
@@ -137,9 +149,10 @@ header.primary{
     &.half{
         width: perc(($page_size / 2) - 15, $page_size);
         float: left;
+        margin-right: perc($gutter_i, $page_size);
         
-        &:nth-of-type(2n - 2){
-            margin-right: perc($gutter_i, $page_size);
+        &.last{
+            margin-right: 0;
         }
     }
     

@@ -431,7 +431,7 @@ table {
 body {
   background: url(../images/noise.png) #e4e6e8;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #292929; }
+  color: #6f7373; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -499,6 +499,9 @@ nav li {
 a {
   text-decoration: none; }
 
+h1, h2, h3 {
+  color: #292929; }
+
 header.primary {
   zoom: 1;
   padding-bottom: 30px;
@@ -553,6 +556,12 @@ header.primary {
     margin: 0;
     text-shadow: 0 1px #fff;
     line-height: 1; }
+  .page header p {
+    font-size: 16px;
+    color: #888d8d;
+    margin: 15px 0 0;
+    line-height: 1.4;
+    text-shadow: 0 1px #fff; }
 .page h2 {
   font-size: 12px;
   margin: 0 0 10px; }
@@ -578,9 +587,10 @@ header.primary {
   margin-bottom: 30px; }
   .bubble.half {
     width: 48.089%;
-    float: left; }
-    .bubble.half:nth-of-type(2n - 2) {
-      margin-right: 3.822%; }
+    float: left;
+    margin-right: 3.822%; }
+    .bubble.half.last {
+      margin-right: 0; }
   .bubble h2 {
     color: #6f7373;
     font-weight: normal; }
