@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MeeterApp - RIT 48 - Sawyer Hollenshead and Ed Mackowiak</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="home">
+	
+	<div class="wrap">
+        <header class="primary">
+            <h1 class="logo"><a href="#dashboard"><img src="images/logo.png" alt="MeeterApp" /></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/settings">Settings</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="sidebar">
+            <nav>
+                <ul>
+                    <li class="meetings active"><a href="meetings">
+                        <img src="images/date-ic.png" alt="Meetings" /><br />Meetings
+                    </a></li>
+                    <li class="people"><a href="people">
+                        <img src="images/people-ic.png" alt="People" /><br />People
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="meetings-tab tab">
+                <a href="/meeting/new" class="new"><img src="images/plus.png" alt="+" />Create Meeting</a>
+            
+                <ul class="items">
+                    <li class="active"><a href="#">
+                        <strong>Design Research</strong>
+                        March 29, 2012
+                    </a></li>
+                    <li><a href="#">
+                        <strong>Design Research</strong>
+                        March 29, 2012
+                    </a></li>
+                </ul>
+            </div><!-- #people-tab -->
+            
+            <div class="people-tab tab">
+                <a href="/meeting/new" class="new"><img src="images/plus.png" alt="+" />Add Person</a>
+                
+                <ul class="items people">
+                    <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Don Draper</strong>
+                        CEO
+                    </li>
+                    <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Sawyer Hollenshead</strong>
+                        Art Director
+                    </li>
+                </ul>
+            </div><!-- #people-tab -->
+        </section><!-- #sidebar -->
+        
+        <section class="page">
+            <header>
+                <h1>New Meeting</h1>
+            </header>
+            
+            <div class="content">
+                <form>
+                    <label>Meeting Title</label>
+                    <input type="text" name="title" />
+                    
+                    <div class="half">
+                        <label>Date</label>
+                        <input type="date" name="date" />
+                    </div>
+                    
+                    <div class="half last">
+                        <div class="quart">
+                            <label>Start Time</label>
+                            <input type="time" name="start-time" />
+                        </div>
+                        <div class="quart last">
+                            <label>End Time</label>
+                            <input type="time" name="end-time" />
+                        </div>
+                    </div><!-- #half -->
+                    
+                    <label>Location</label>
+                    <input type="text" name="location" />
+                    
+                    <label>Agenda</label>
+                    <textarea name="agenda"></textarea>
+                </form>
+            </div><!-- #content -->                
+        </section><!-- #page -->
+            
+	</div><!-- #wrap -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

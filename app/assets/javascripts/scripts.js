@@ -1,5 +1,7 @@
 $(function(){
     
+    var modal = null;
+    
     // Sidebar Tabs
     $('.sidebar nav a').on('click', function(e){
         var $this = $(this);
@@ -26,5 +28,26 @@ $(function(){
             'max-height': page_height
         });
     });
-
+    
+    // Modals
+    $('.sidebar .new').on('click', function(e){
+        e.preventDefault();
+        
+        $('.modal-bg').fadeIn();
+        $('.modal').addClass('loading').show();
+        
+        $('.modal-body').load($(this).attr('href') + ' .page', function(){
+            $('.modal').removeClass('loading');
+        });
+        
+    });
+    
+    $('.submit-form').on('click', function(){
+        $('#modal form').submit();
+    });
+    
+    $('.modal-bg, .modal .close').on('click', function(){
+        $('#modal').hide();
+        $('.modal-bg').fadeOut();
+    });
 });
