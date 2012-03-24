@@ -3,15 +3,19 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.instance_of?(User)
-      dashboard_path
-
-      if !resource.attendee?
-         # do some data setup
+      
+      begin
+        resource.attendee?
+      rescue NoMethodError
+        # set up starting data
         resource.group = Group.create
         resource.attendee = Attendee.create
         resource.attendee.email = resource.email
         resource.group.attendees.push resource.attendee
       end
+
+      dashboard_path
+
     else
       super
     end

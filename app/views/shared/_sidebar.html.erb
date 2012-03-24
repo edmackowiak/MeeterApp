@@ -15,7 +15,12 @@
     <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '/new-meeting.html', :class => 'new new-meeting' %>
 
     <ul class="items">
-      <li class="active">
+      <% get_meetings_to_display.each do |meeting| %>
+        <li>
+          <strong><%= meeting.name %></strong>
+        </li>
+      <% end %>
+      <!-- <li class="active">
           <a href="#">
               <strong>Design Research</strong>
               March 29, 2012
@@ -26,7 +31,7 @@
               <strong>Design Research</strong>
               March 29, 2012
           </a>
-      </li>
+      </li> -->
     </ul>
 
   </div>
@@ -37,6 +42,9 @@
     <ul class="items people">
       <% get_attendees_to_display.each do |att| %>
         <li>
+          <% if att.email? %>
+            <img src=<%= Gravatar.new(att.email).image_url %> alt="Name" class="avatar" />
+          <% end %>
           <strong><%= att.name %></strong>
           Hourly rate: <%= att.hourly_rate %>
         </li>

@@ -22,7 +22,8 @@ class UserController < ApplicationController
 
     @attendee.name = params[:name]
     @attendee.position = params[:title]
-    @attendee.hourly_rate = params[:hourly_rate]
+    @attendee.hourly_rate = params[:hourly_rate].gsub(",", "").to_f
+    @attendee.email = @user.email
 
     @attendee.save
 

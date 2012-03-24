@@ -8,7 +8,6 @@ MeeterApp::Application.routes.draw do
   root :to => 'public_pages#home'
 
   match 'dashboard' => "private_pages#dashboard"
-  match "/user/:id" => "user#show"
 
   resources :user, :attendee
 

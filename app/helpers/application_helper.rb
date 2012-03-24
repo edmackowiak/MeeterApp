@@ -14,5 +14,15 @@ module ApplicationHelper
 
     return @attendees_to_display
   end
+
+  def get_meetings_to_display
+    begin
+      @meetings_to_display = current_user.meetings
+    rescue NoMethodError
+      @meetings_to_display = []
+    end
+
+    return @meetings_to_display
+  end
     
 end

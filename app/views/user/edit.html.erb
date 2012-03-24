@@ -4,7 +4,7 @@
 
 <div class="content">
   <article class="bubble">
-    <%= form_tag user_path(@user), :method => 'put' do %>
+    <%= form_for(@user, :method => 'put') do %>
            
       <p>
         <%= label_tag(:name, "Name: ") %>
