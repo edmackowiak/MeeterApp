@@ -350,6 +350,10 @@ header.primary{
         
     } // nav
     
+    .people-tab{
+        display: none;
+    }
+    
     .new{
         @include border-radius;
         @include box-shadow((inset 0 1px 0 rgba(#fff, 0.9), 0 1px 0 rgba(#000, 0.9)));
