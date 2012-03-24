@@ -1,8 +1,9 @@
 MeeterApp::Application.routes.draw do
 
+  devise_for :users
+
   get "private_pages/dashboard"
 
-  devise_for :users
 
   root :to => 'public_pages#home'
 

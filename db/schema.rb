@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324021833) do
+ActiveRecord::Schema.define(:version => 20120324063432) do
+
+  create_table "attendees", :force => true do |t|
+    t.string   "name"
+    t.integer  "hourly_rate"
+    t.string   "email"
+    t.integer  "user_id"
+    t.integer  "meeting_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "attendees", ["user_id"], :name => "index_attendees_on_user_id"
+
+  create_table "attendees_meetings", :id => false, :force => true do |t|
+    t.integer "attendee_id"
+    t.integer "meeting_id"
+  end
+
+  add_index "attendees_meetings", ["attendee_id", "meeting_id"], :name => "index_attendees_meetings_on_attendee_id_and_meeting_id"
+  add_index "attendees_meetings", ["meeting_id", "attendee_id"], :name => "index_attendees_meetings_on_meeting_id_and_attendee_id"
+
+  create_table "meetings", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  hourly_rate: 1
+  email: MyString
+  user: 
+  meeting: 
+
+two:
+  name: MyString
+  hourly_rate: 1
+  email: MyString
+  user: 
+  meeting: 

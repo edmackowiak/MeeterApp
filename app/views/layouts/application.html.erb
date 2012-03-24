@@ -13,6 +13,10 @@
     
     <%= render :partial => "shared/header" %>
 
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+    
     <% if current_user %>
       
       <%= render :partial => "shared/sidebar" %>
