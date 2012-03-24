@@ -1,4 +1,6 @@
 MeeterApp::Application.routes.draw do
+
+  root :to => 'public_pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

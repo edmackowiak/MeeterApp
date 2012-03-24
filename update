@@ -1,0 +1,9 @@
+
+cp ./front-end/css/style.scss ./app/assets/stylesheets/style.scss
+cp ./front-end/css/normalize.scss ./app/assets/stylesheets/normalize.scss
+cp ./front-end/css/globals.scss ./app/assets/stylesheets/globals.scss
+
+cp ./front-end/js/plugins.js ./app/assets/javascripts/plugins.js
+cp ./front-end/js/scripts.js ./app/assets/javascripts/scripts.js
+
+
