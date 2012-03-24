@@ -33,11 +33,10 @@
 
   <div class="people-tab tab">
     <%= link_to image_tag("plus.png", :alt => "+" ) + "Add Person", '/new-meeting.html', :class => 'new new-person' %>
-    
+
     <ul class="items people">
-      
+      <% @attendees_to_display.each do |att| %>
         <li>
-          <%= att %>
           <strong><%= att.name %></strong>
           Hourly rate: <%= att.hourly_rate %>
         </li>
