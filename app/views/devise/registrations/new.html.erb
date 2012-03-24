@@ -1,18 +1,24 @@
-<h2>Sign up</h2>
+<% body_classes << "full-page" %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<header>
+    <h1>Sign up</h1>
+</header>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<div class="content">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+    
+      <div><%= f.label :password %><br />
+      <%= f.password_field :password %></div>
+    
+      <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
+    
+      <div><%= f.submit "Sign up" %></div>
+    <% end %>
+    
+    <%= render :partial => "devise/shared/links" %>
+</div>

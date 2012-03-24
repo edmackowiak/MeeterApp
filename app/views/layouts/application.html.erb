@@ -8,7 +8,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="home">
+<body class="home <%=body_classes.join(' ')%>">
   <div class="wrap">
     
     <%= render :partial => "shared/header" %>

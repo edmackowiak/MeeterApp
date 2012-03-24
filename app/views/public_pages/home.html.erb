@@ -1,5 +1,11 @@
-<h1>Welcome!</h1>
+<% body_classes << "full-page" %>
 
+<header>
+    <h1>Welcome!</h1>
+</header>
+
+<div class="content">
 <p>
 Please <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> to continue.
 </p>
+</div>
