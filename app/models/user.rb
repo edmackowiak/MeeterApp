@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :attendee
 
   has_one :attendee
+
+  has_one :group
   
 end

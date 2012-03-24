@@ -33,8 +33,17 @@
 
   <div class="people-tab tab">
     <%= link_to image_tag("plus.png", :alt => "+" ) + "Add Person", '#', :class => 'new' %>
+    
     <ul class="items people">
-                  <li>
+      
+        <li>
+          <%= att %>
+          <strong><%= att.name %></strong>
+          Hourly rate: <%= att.hourly_rate %>
+        </li>
+      <% end %>
+<!-- 
+              <li>
                   <img src="/assets/avatar.png" alt="Name" class="avatar" />
                   <strong>Don Draper</strong>
                   CEO
@@ -43,7 +52,7 @@
                   <img src="/assets/avatar.png" alt="Name" class="avatar" />
                   <strong>Sawyer Hollenshead</strong>
                   Art Director
-              </li>
+              </li> -->
     </ul>
   </div>
 
