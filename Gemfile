@@ -44,3 +44,6 @@ gem 'jquery-rails'
 
 # devise
 gem 'devise'
+
+# gravatar
+gem 'gravatar_image_tag'
