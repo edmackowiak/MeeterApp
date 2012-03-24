@@ -36,7 +36,7 @@
         		xAxis: {
         			labels: {
         				formatter: function() {
-        					return monthNames[this.value];
+        					return monthNames[Math.round(this.value)];
         				}
         			}
         		},
