@@ -1,0 +1,314 @@
+@import 'normalize.scss';
+@import 'globals.scss';
+
+body{
+    background: url(../images/noise.png) #e4e6e8;
+    font-family: $helvetica;
+    color: $normal_text;
+}
+
+*{
+    @include box-sizing(border-box);
+}
+
+// ******************************************************
+//  Basic structure
+
+nav{
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        display: inline;
+    }
+}
+
+.wrap{
+    width: 90%;
+    max-width: $full + px;
+    margin: 80px auto;
+}
+
+.container, .wrap{
+    @include clearfix;
+}
+
+.sidebar{
+    @include border-radius(4px 0 0 4px);
+    @include box-shadow(inset -5px 0 5px rgba(0,0,0,0.2));
+    background: $sidebar_bg;
+    border-left: 1px solid #23252b;
+    border-top: 1px solid #23252b;
+    border-bottom: 1px solid #23252b;
+    width: perc($sidebar_size);
+    float: left;
+}
+
+.page{
+    @include border-radius(0 4px 4px 0);
+    background: #f7f7f7;
+    min-height: 400px;
+    width: perc($page_size);
+    float: left;
+}
+
+.content{
+    padding: $gutter;
+}
+
+// ******************************************************
+//  Global styles
+
+a{
+    text-decoration: none;
+}
+
+// ******************************************************
+//  Header
+
+header.primary{
+    @include clearfix;
+    padding-bottom: $gutter;
+    line-height: 1;
+    
+    .logo{
+        float: left;
+        margin: 0;
+    }
+    nav{
+        text-align: right;
+        float: right;
+        margin-top: 10px;
+        
+        a{
+            font-size: 11px;
+            color: #1e1e1e;
+            padding: 10px 0;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        
+        li{
+            margin-left: $gutter;
+        }
+    }
+}
+
+// ******************************************************
+//  Page Styles
+
+.page{
+    header{
+        @include border-radius(0 4px 0 0);
+        @include box-shadow(0 1px 0 #fff);
+        @include vertical-gradient(#fff, #dcdcdc);
+        border-bottom: 1px solid #b4b4b4;
+        padding: $gutter;
+        
+        h1{
+            color: $dark_blue;
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0;
+            text-shadow: 0 1px #fff;
+            line-height: 1;
+        }
+    }
+    
+    h2{
+        font-size: 12px;
+        margin: 0 0 10px;
+    }
+}
+
+.bubble{
+    @include border-radius;
+    @include box-shadow(inset 0 1px 1px rgba(#000, 0.1));
+    background: #fff;
+    border: 1px solid $border_color;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    margin-bottom: $gutter;
+    
+    &.half{
+        width: perc(($page_size / 2) - 15, $page_size);
+        float: left;
+        
+        &:nth-of-type(2n - 2){
+            margin-right: perc($gutter_i, $page_size);
+        }
+    }
+    
+    h2{
+        color: $light_text;
+        font-weight: normal;
+    }
+    
+    .big-text{
+        font-size: 48px;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1;
+    }
+    
+    .bg-img{
+        @include transition;
+        @include transform(rotate(-20deg));
+        opacity: 0.1;
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+        
+        &.cash-bg{
+            bottom: -30px;
+        }
+    }
+    
+    &:hover .bg-img{
+        @include transform((rotate(0deg) scale(0.8)));
+        right: 0;
+        bottom: 0;
+        
+        &.cash-bg{
+            bottom: -10px;
+        }
+    }
+}
+
+// ******************************************************
+//  Sidebar Styles
+
+.sidebar{
+    font-size: 14px;
+    
+    nav{
+        @include clearfix;
+        
+        img{
+            margin-bottom: 2px;
+        }
+        
+        a{
+            @include vertical-gradient(#414a59, #22262e);
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            padding: 20px 5px;
+            text-align: center;
+        }
+        li{
+            width: 50%;
+            float: left;
+            border-bottom: 1px solid #22262e;
+            
+            &:last-child{
+                a{
+                    @include box-shadow(-1px 0 0 rgba(#000, 0.2));
+                    border-left: 1px solid rgba(#fff, 0.12);
+                }
+            }
+            
+            &.active{
+                border-color: #303641;
+                
+                a{
+                    @include box-shadow(inset 0 6px 8px rgba(#000, 0.3));
+                    background: none;
+                    color: rgba(#fff, 0.8);
+                    
+                    img{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        } // li
+        
+    } // nav
+    
+    .new{
+        @include border-radius;
+        @include box-shadow((inset 0 1px 0 rgba(#fff, 0.9), 0 1px 0 rgba(#000, 0.9)));
+        @include vertical-gradient(rgba(#fff, 0.45), rgba(#fff, 0.8));
+        color: #232830;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin: $gutter / 2;
+        padding: 10px 5px;
+        text-align: center;
+        text-shadow: 0 1px #fff;
+        
+        &:hover{
+            @include vertical-gradient(rgba(#fff, 0.6), rgba(#fff, 1));
+        }
+        
+        &:active{
+            @include box-shadow((inset 0 1px 0 rgba(#fff, 0.9)));
+            position: relative;
+            top: 1px;
+        }
+        
+        img{
+            margin-right: 10px;
+        }
+    } // .new
+    
+    .items{
+        font-size: 12px;
+        margin: -10px 0 0;
+        padding: 0;
+        
+        a{
+            @include box-shadow(0 1px 0 rgba(#fff, 0.15));
+            @include transition;
+            border-bottom: 1px solid rgba(#000, 0.2);
+            padding: 10px ($gutter / 2);
+            color: #97acd0;
+            display: block;
+            
+            strong{
+                color: #fff;
+            }
+            
+            &:hover{
+                background: rgba(#000, 0.2);
+            }
+        }
+        
+        strong{
+            font-size: 14px;
+            margin-bottom: 3px;
+            display: block;
+        }
+        
+        li{
+            list-style: none; 
+            
+            &:last-child a{
+                @include box-shadow(none);
+                border-bottom: none 0;
+                margin-bottom: 0;
+            }
+            
+            &.active{
+                position: relative;
+                
+                &:after{
+                    background: url(../images/white-indent-arrow.png) center center no-repeat;
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    height: 26px;
+                    width: 9px;
+                    top: 50%;
+                    right: 0;
+                    margin-top: -13px
+                }
+            }
+        }
+    } // .items
+}
