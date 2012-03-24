@@ -50,4 +50,18 @@ $(function(){
         $('#modal').hide();
         $('.modal-bg').fadeOut();
     });
+    
+    // Add attendees
+    $('.sidebar .people li').on('click', function(){
+        var $this = $(this);
+        var $checkbox = $('input[type="checkbox"]', $this);
+        
+        if( $checkbox.attr('checked') == 'checked'){
+            $this.removeClass('selected');
+            $checkbox.removeAttr('checked');
+        } else {
+            $this.addClass('selected');
+            $checkbox.attr('checked', 'checked');
+        }
+    });
 });

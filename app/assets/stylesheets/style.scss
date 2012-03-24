@@ -478,6 +478,7 @@ header.primary{
             padding: 10px ($gutter / 2);
             color: #97acd0;
             display: block;
+            cursor: pointer;
             
             strong{
                 color: #fff;
@@ -520,6 +521,20 @@ header.primary{
             }
         }
     } // .items
+    
+    .people {
+        input[type="checkbox"]{
+            display: none;
+        }
+        
+        li.selected, li.selected:hover{
+            background: rgba(#000, 0.5);
+            
+            .avatar{
+                border: 2px solid #fff;
+            }
+        }
+    }
 }
 
 .modal{
