@@ -325,6 +325,10 @@ input, textarea{
     padding: 10px;
     margin-bottom: $gutter / 2;
 }
+textarea{
+    line-height: 1.5;
+    height: 75px;
+}
 
 // ******************************************************
 //  Sidebar Styles

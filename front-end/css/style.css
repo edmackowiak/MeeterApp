@@ -740,6 +740,10 @@ input, textarea {
   padding: 10px;
   margin-bottom: 15px; }
 
+textarea {
+  line-height: 1.5;
+  height: 75px; }
+
 .sidebar {
   font-size: 14px; }
   .sidebar nav {
