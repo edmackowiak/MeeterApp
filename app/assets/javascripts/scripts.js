@@ -21,7 +21,10 @@ $(function(){
             page_height = parseInt($('.page').css('min-height')) + 'px';
         }
         
-        $('section.sidebar').css('min-height', page_height);
+        $('section.sidebar').css({
+            'min-height': page_height,
+            'max-height': page_height
+        });
     });
 
 });

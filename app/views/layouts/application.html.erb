@@ -17,16 +17,10 @@
       
       <%= render :partial => "shared/sidebar" %>
 
-      <section class="page">
-
-        <%= yield %>
-
-      </section>
-
-
     <% else # no curent user %>
-      <%= yield %>
     <% end %>
+
+    <%= yield %>
 
   </div>
 
