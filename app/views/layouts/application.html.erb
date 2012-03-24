@@ -40,5 +40,12 @@
       </div>
   </div>
 
+  <% if Rails.env.development?%>
+      
+    <div><%= debug(params) %></div> 
+
+  <% end %>
+
+
 </body>
 </html>

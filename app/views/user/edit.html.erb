@@ -1,0 +1,30 @@
+<header>
+  <h1><%= @user.email %></h1>
+</header>
+
+<div class="content">
+  <article class="bubble">
+    <%= form_tag user_path(@user), :method => 'put' do %>
+           
+      <p>
+        <%= label_tag(:name, "Name: ") %>
+        <%= text_field_tag(:name, @attendee.name ) %>
+      </p>
+
+      <p>
+        <%= label_tag(:title, "Title: ") %>
+        <%= text_field_tag(:title, @attendee.position ) %>
+      </p>
+
+      <p>
+        <%= label_tag(:hourly_rate, "Hourly Rate: (Dollars) ") %>
+        <%= text_field_tag(:hourly_rate, number_to_currency( @attendee.hourly_rate, :unit => '') ) %>
+      </p>
+
+      <p>
+        <%= submit_tag("Submit") %>
+      </p>
+
+    <% end %>
+  </article>
+</div>

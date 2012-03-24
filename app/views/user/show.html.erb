@@ -14,7 +14,7 @@
     </p>
 
     <p>
-      Hourly Rate: $<%= @attendee.hourly_rate if @attendee  %>.00
+      Hourly Rate: <%= number_to_currency(@attendee.hourly_rate , :unit => "$")if @attendee  %>
     </p>
 
     <p>

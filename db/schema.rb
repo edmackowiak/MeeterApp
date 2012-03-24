@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120324174459) do
 
   create_table "attendees", :force => true do |t|
     t.string   "name"
-    t.integer  "hourly_rate"
+    t.decimal  "hourly_rate"
     t.string   "email"
     t.integer  "user_id"
     t.integer  "meeting_id"
