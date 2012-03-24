@@ -46,7 +46,7 @@
         			},
         			labels: {
         				formatter: function() {
-        					return '$' + this.value;
+        					return '$' + Highcharts.numberFormat(this.value, 0);
         				}
         			}
         		},
@@ -75,28 +75,28 @@
         			name: 'USA',
         			data: [{
                         x: 1,
-                        y: 100
+                        y: 10000
         			}, {
                         x: 2,
-                        y: 200
+                        y: 20000
         			},{
                         x: 3,
-                        y: 100
+                        y: 10000
         			},{
                         x: 4,
-                        y: 250
+                        y: 25000
         			},{
                         x: 5,
-                        y: 410
+                        y: 41000
         			},{
                         x: 6,
-                        y: 100
+                        y: 10000
         			},{
                         x: 7,
                         y: 0
         			},{
                         x: 8,
-                        y: 240
+                        y: 24000
         			}]
         		}]
         	});
