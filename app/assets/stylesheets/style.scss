@@ -521,3 +521,7 @@ header.primary{
         }
     } // .items
 }
+
+.highcharts-title, .highcharts-legend{
+    display: none;
+}
