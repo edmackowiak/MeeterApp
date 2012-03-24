@@ -30,13 +30,16 @@ $(function(){
     });
     
     // Modals
-    $('.new-meeting').on('click', function(){
+    $('.sidebar .new').on('click', function(e){
+        e.preventDefault();
+        
         $('.modal-bg').fadeIn();
         $('.modal').addClass('loading').show();
         
-        $('.modal-body').load('/new-meeting.html' + ' .page', function(){
+        $('.modal-body').load($(this).attr('href') + ' .page', function(){
             $('.modal').removeClass('loading');
         });
+        
     });
     
     $('.submit-form').on('click', function(){
