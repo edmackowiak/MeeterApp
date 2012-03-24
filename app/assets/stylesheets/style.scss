@@ -143,7 +143,7 @@ header.primary{
         }
     }
     
-    h2{
+    h2, label{
         font-size: 12px;
         margin: 0 0 10px;
     }
@@ -231,38 +231,6 @@ header.primary{
         }
     }
     
-    &.half{
-        width: perc(($page_size / 2) - 15, $page_size);
-        float: left;
-        margin-right: perc($gutter_i, $page_size);
-        
-        &.last{
-            margin-right: 0;
-        }
-        
-        .people-list{
-            li{
-                margin-bottom: 5px;
-                padding-bottom: 0;
-                border-bottom: 0 none;
-                float: none;
-                width: auto;
-                height: 20px;
-            }
-            
-            strong{
-                font-size: 13px;
-                display: inline;
-            }
-            
-            .avatar{
-                width: 20px;
-                height: 20px;
-                margin-right: 8px;
-            }
-        }
-    }
-    
     h2{
         color: $light_text;
         font-weight: normal;
@@ -298,6 +266,68 @@ header.primary{
             bottom: -10px;
         }
     }
+}
+
+.half, .bubble.half{
+    width: perc(($page_size / 2) - 15, $page_size);
+    float: left;
+    margin-right: perc($gutter_i, $page_size);
+    
+    &.last{
+        margin-right: 0;
+    }
+    
+    .people-list{
+        li{
+            margin-bottom: 5px;
+            padding-bottom: 0;
+            border-bottom: 0 none;
+            float: none;
+            width: auto;
+            height: 20px;
+        }
+        
+        strong{
+            font-size: 13px;
+            display: inline;
+        }
+        
+        .avatar{
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+    }
+}
+
+.quart{
+    width: perc(($page_size / 2) - 15, $page_size);
+    margin-right: perc($gutter_i, $page_size);
+    float: left;
+    
+    &.last{
+        margin-right: 0;
+    }
+}
+
+label{
+    display: block;
+}
+input, textarea{
+    @include border-radius;
+    @include box-shadow(inset 0 1px 1px rgba(#000, 0.1));
+    background: #fff;
+    border: 1px solid $border_color;
+    color: $light_text;
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: $gutter / 2;
+}
+textarea{
+    line-height: 1.5;
+    height: 75px;
 }
 
 // ******************************************************
