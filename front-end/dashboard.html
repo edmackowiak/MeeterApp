@@ -22,27 +22,46 @@
         <section class="sidebar">
             <nav>
                 <ul>
-                    <li class="meetings active"><a href="#meetings">
+                    <li class="meetings active"><a href="meetings">
                         <img src="images/date-ic.png" alt="Meetings" /><br />Meetings
                     </a></li>
-                    <li class="people"><a href="#people">
+                    <li class="people"><a href="people">
                         <img src="images/people-ic.png" alt="People" /><br />People
                     </a></li>
                 </ul>
             </nav>
             
-            <a href="/meeting/new" class="new"><img src="images/plus.png" alt="+" />Create Meeting</a>
+            <div class="meetings-tab tab">
+                <a href="/meeting/new" class="new"><img src="images/plus.png" alt="+" />Create Meeting</a>
             
-            <ul class="items">
-                <li class="active"><a href="#">
-                    <strong>Design Research</strong>
-                    March 29, 2012
-                </a></li>
-                <li><a href="#">
-                    <strong>Design Research</strong>
-                    March 29, 2012
-                </a></li>
-            </ul>
+                <ul class="items">
+                    <li class="active"><a href="#">
+                        <strong>Design Research</strong>
+                        March 29, 2012
+                    </a></li>
+                    <li><a href="#">
+                        <strong>Design Research</strong>
+                        March 29, 2012
+                    </a></li>
+                </ul>
+            </div><!-- #people-tab -->
+            
+            <div class="people-tab tab">
+                <a href="/meeting/new" class="new"><img src="images/plus.png" alt="+" />Add Person</a>
+                
+                <ul class="items people">
+                    <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Don Draper</strong>
+                        CEO
+                    </li>
+                    <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Sawyer Hollenshead</strong>
+                        Art Director
+                    </li>
+                </ul>
+            </div><!-- #people-tab -->
         </section><!-- #sidebar -->
         
         <section class="page">

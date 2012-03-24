@@ -752,6 +752,8 @@ header.primary {
           color: rgba(255, 255, 255, 0.8); }
           .sidebar nav li.active a img {
             opacity: 0.8; }
+  .sidebar .people-tab {
+    display: none; }
   .sidebar .new {
     -webkit-background-clip: padding;
     -webkit-background-clip: padding-box;
