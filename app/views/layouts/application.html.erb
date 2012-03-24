@@ -10,74 +10,12 @@
 </head>
 <body class="home">
   <div class="wrap">
-    <header class="primary">
-      <h1 class="logo">
-        <%= link_to image_tag( "logo.png", :alt => "MeeterApp" ), '#' %>
-      </h1>
-      <nav>
-        <ul
-          <% if current_user %>
-            <li><%= link_to "Settings", "#" %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></li>
-          <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
+    
+    <%= render :partial => "shared/header" %>
 
     <% if current_user %>
-      <section class="sidebar">
-        <nav>
-          <ul>
-            <li class="meetings active">
-              <%= link_to image_tag( "date-ic.png", :alt => "Meetings" ) + raw("<br />Meetings"), 'meetings' %>
-            </li>
-            <li class="people">
-              <%= link_to image_tag( "people-ic.png", :alt => "People" ) + raw("<br />People"), 'people' %>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="meetings-tab tab">
-
-          <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '#', :class => 'new' %>
-
-          <ul class="items">
-            <li class="active">
-                            <a href="#">
-                                <strong>Design Research</strong>
-                                March 29, 2012
-                            </a>
-            </li>
-            <li>
-                            <a href="#">
-                                <strong>Design Research</strong>
-                                March 29, 2012
-                            </a>
-            </li>
-          </ul>
-
-        </div>
-
-        <div class="people-tab tab">
-          <%= link_to image_tag("plus.png", :alt => "+" ) + "Add peron", '#', :class => 'new' %>
-          <ul class="items people">
-                        <li>
-                        <img src="images/avatar.png" alt="Name" class="avatar" />
-                        <strong>Don Draper</strong>
-                        CEO
-                    </li>
-                    <li>
-                        <img src="images/avatar.png" alt="Name" class="avatar" />
-                        <strong>Sawyer Hollenshead</strong>
-                        Art Director
-                    </li>
-          </ul>
-        </div>
-
-      </section>
+      
+      <%= render :partial => "shared/sidebar" %>
 
       <section class="page">
 

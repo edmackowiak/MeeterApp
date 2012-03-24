@@ -1,0 +1,50 @@
+<section class="sidebar">
+  <nav>
+    <ul>
+      <li class="meetings active">
+        <%= link_to image_tag( "date-ic.png", :alt => "Meetings" ) + raw("<br />Meetings"), 'meetings' %>
+      </li>
+      <li class="people">
+        <%= link_to image_tag( "people-ic.png", :alt => "People" ) + raw("<br />People"), 'people' %>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="meetings-tab tab">
+
+    <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '#', :class => 'new' %>
+
+    <ul class="items">
+      <li class="active">
+                      <a href="#">
+                          <strong>Design Research</strong>
+                          March 29, 2012
+                      </a>
+      </li>
+      <li>
+                      <a href="#">
+                          <strong>Design Research</strong>
+                          March 29, 2012
+                      </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="people-tab tab">
+    <%= link_to image_tag("plus.png", :alt => "+" ) + "Add peron", '#', :class => 'new' %>
+    <ul class="items people">
+                  <li>
+                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
+                  <strong>Don Draper</strong>
+                  CEO
+              </li>
+              <li>
+                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
+                  <strong>Sawyer Hollenshead</strong>
+                  Art Director
+              </li>
+    </ul>
+  </div>
+
+</section>
