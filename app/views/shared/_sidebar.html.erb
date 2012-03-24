@@ -33,19 +33,25 @@
 
   <div class="people-tab tab">
     <%= link_to image_tag("plus.png", :alt => "+" ) + "Add Person", '/new-meeting.html', :class => 'new new-person' %>
+
     <ul class="items people">
-          <li>
-              <img src="/assets/avatar.png" alt="Name" class="avatar" />
-              <strong>Don Draper</strong>
-              CEO
-              <input type="checkbox" value="my_id" name="attending" />
-          </li>
-          <li>
-              <img src="/assets/avatar.png" alt="Name" class="avatar" />
-              <strong>Sawyer Hollenshead</strong>
-              Art Director
-              <input type="checkbox" value="my_id" name="attending" />
-          </li>
+      <% @attendees_to_display.each do |att| %>
+        <li>
+          <strong><%= att.name %></strong>
+          Hourly rate: <%= att.hourly_rate %>
+        </li>
+      <% end %>
+<!-- 
+              <li>
+                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
+                  <strong>Don Draper</strong>
+                  CEO
+              </li>
+              <li>
+                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
+                  <strong>Sawyer Hollenshead</strong>
+                  Art Director
+              </li> -->
     </ul>
   </div>
 
