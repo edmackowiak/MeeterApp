@@ -11,6 +11,10 @@ body{
     @include box-sizing(border-box);
 }
 
+img{
+    max-width: 100%;
+}
+
 // ******************************************************
 //  Basic structure
 
@@ -62,10 +66,19 @@ nav{
 
 a{
     text-decoration: none;
+    color: $link_color;
 }
 
 h1, h2, h3{
     color: $normal_text;
+}
+
+h2{
+    color: $link_color;
+}
+
+p{
+    line-height: 1.5;
 }
 
 // ******************************************************
@@ -136,6 +149,20 @@ header.primary{
     }
 }
 
+.text-block{
+    margin-bottom: $gutter;
+    
+    p:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.people-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .bubble{
     @include border-radius;
     @include box-shadow(inset 0 1px 1px rgba(#000, 0.1));
@@ -146,6 +173,64 @@ header.primary{
     position: relative;
     margin-bottom: $gutter;
     
+    &:last-child{
+        margin-bottom: 0;
+    }
+    
+    .people-list{
+        @include clearfix;
+        font-size: 13px;
+        color: $light_text;
+        
+        strong{
+            font-size: 16px;
+            color: $normal_text;
+            display: block;
+        }
+        
+        .avatar{
+            width: 35px;
+            height: 35px;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .remove{
+            @include transition;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -16px;
+            opacity: 0.35;
+            width: 12px;
+            height: 12px;
+            
+            &:hover{
+                opacity: 0.9;
+            }
+        }
+        
+        li{
+            border-bottom: 1px solid $border_color;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 20px;
+            width: perc((($page_size - 40) / 2) - 15, $page_size);
+            float: left;
+            
+            &:nth-child(odd){
+                margin-right: perc($gutter_i);
+            }
+            
+            &:last-child, &:nth-last-child(2){
+                border-bottom: 0;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+    
     &.half{
         width: perc(($page_size / 2) - 15, $page_size);
         float: left;
@@ -153,6 +238,28 @@ header.primary{
         
         &.last{
             margin-right: 0;
+        }
+        
+        .people-list{
+            li{
+                margin-bottom: 5px;
+                padding-bottom: 0;
+                border-bottom: 0 none;
+                float: none;
+                width: auto;
+                height: 20px;
+            }
+            
+            strong{
+                font-size: 13px;
+                display: inline;
+            }
+            
+            .avatar{
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
         }
     }
     
@@ -162,6 +269,7 @@ header.primary{
     }
     
     .big-text{
+        color: $normal_text;
         font-size: 48px;
         font-weight: bold;
         margin: 0;
@@ -270,12 +378,19 @@ header.primary{
         }
     } // .new
     
+    .avatar{
+        width: 32px;
+        height: 32px;
+        float: left;
+        margin-right: 10px;
+    }
+    
     .items{
         font-size: 12px;
         margin: -10px 0 0;
         padding: 0;
         
-        a{
+        a, &.people li{
             @include box-shadow(0 1px 0 rgba(#fff, 0.15));
             @include transition;
             border-bottom: 1px solid rgba(#000, 0.2);
