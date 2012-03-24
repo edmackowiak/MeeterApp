@@ -10,5 +10,6 @@
  *
  *= require normalize
  *= require globals
+ *= require bootstrap
  *= require style
 */
