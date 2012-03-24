@@ -2,7 +2,7 @@
 @import 'globals.scss';
 
 body{
-    background: url(../images/noise.png) #e4e6e8;
+    background: url(noise.png) #e4e6e8;
     font-family: $helvetica;
     color: $light_text;
 }
@@ -460,7 +460,7 @@ textarea{
                 position: relative;
                 
                 &:after{
-                    background: url(../images/white-indent-arrow.png) center center no-repeat;
+                    background: url(white-indent-arrow.png) center center no-repeat;
                     content: '';
                     display: block;
                     position: absolute;
