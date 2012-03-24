@@ -1,8 +1,9 @@
 MeeterApp::Application.routes.draw do
 
-  devise_for :user
+  devise_for :users
 
   root :to => 'public_pages#home'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MeeterApp</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MeeterApp - RIT 48 - Sawyer Hollenshead and Ed Mackowiak</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -16,7 +18,7 @@
         <ul
           <% if current_user %>
             <li><%= link_to "Settings", "#" %></li>
-            <li><%= link_to "Logout", "#" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></li>
           <% else %>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -30,21 +32,62 @@
         <nav>
           <ul>
             <li class="meetings active">
-              <%= link_to image_tag( "date-ic.png", :alt => "Meetings" ), '#Meetings' %>
+              <%= link_to image_tag( "date-ic.png", :alt => "Meetings" ) + raw("<br />Meetings"), 'meetings' %>
             </li>
             <li class="people">
-              <%= link_to image_tag( "people-ic.png", :alt => "People" ), '#People' %>
+              <%= link_to image_tag( "people-ic.png", :alt => "People" ) + raw("<br />People"), 'people' %>
             </li>
           </ul>
         </nav>
+
+        <div class="meetings-tab tab">
+
+          <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '#', :class => 'new' %>
+
+          <ul class="items">
+            <li class="active">
+                            <a href="#">
+                                <strong>Design Research</strong>
+                                March 29, 2012
+                            </a>
+            </li>
+            <li>
+                            <a href="#">
+                                <strong>Design Research</strong>
+                                March 29, 2012
+                            </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="people-tab tab">
+          <%= link_to image_tag("plus.png", :alt => "+" ) + "Add peron", '#', :class => 'new' %>
+          <ul class="items people">
+                        <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Don Draper</strong>
+                        CEO
+                    </li>
+                    <li>
+                        <img src="images/avatar.png" alt="Name" class="avatar" />
+                        <strong>Sawyer Hollenshead</strong>
+                        Art Director
+                    </li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="page">
+
+        <%= yield %>
+
       </section>
 
 
+    <% else # no curent user %>
       <%= yield %>
-
-
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
     <% end %>
 
   </div>
