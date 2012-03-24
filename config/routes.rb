@@ -9,7 +9,9 @@ MeeterApp::Application.routes.draw do
 
   match 'dashboard' => "private_pages#dashboard"
 
-  resources :user, :attendee
+  match 'create_user_without_usermodel' => 'user#create'
+
+  resources :user, :attendee, :meeting
 
 
   

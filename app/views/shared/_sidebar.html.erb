@@ -37,7 +37,7 @@
   </div>
 
   <div class="people-tab tab">
-    <%= link_to image_tag("plus.png", :alt => "+" ) + "Add Person", '/new-meeting.html', :class => 'new new-person' %>
+    <%= link_to image_tag("plus.png", :alt => "+" ) + "Add Person", new_user_path, :class => 'new new-person' %>
 
     <ul class="items people">
       <% get_attendees_to_display.each do |att| %>
@@ -46,7 +46,7 @@
             <img src=<%= Gravatar.new(att.email).image_url %> alt="Name" class="avatar" />
           <% end %>
           <strong><%= att.name %></strong>
-          Hourly rate: <%= att.hourly_rate %>
+          Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
         </li>
       <% end %>
 <!-- 

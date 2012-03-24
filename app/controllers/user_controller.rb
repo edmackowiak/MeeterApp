@@ -30,4 +30,17 @@ class UserController < ApplicationController
     redirect_to @user, notice: "Successfully updated user."
   end
 
+  def create
+    @attendee = Attendee.new
+    @attendee.name = params[:name]
+    @attendee.position = params[:title]
+    @attendee.hourly_rate = params[:hourly_rate].gsub(",", "").to_f
+    @attendee.email = params[:email]
+
+    current_user.group.attendees.push @attendee 
+    @attendee.save
+
+    redirect_to dashboard_path, notice: "Successfully updated user."
+  end
+
 end
