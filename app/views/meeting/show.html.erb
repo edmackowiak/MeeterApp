@@ -8,10 +8,10 @@
       Date: <%= @meeting.date %>
     </p>
     <p>
-      Start time: <%= @meeting.start_time %>
+      Start time: <%= @meeting.start_time.strftime("%H:%M %P") %>
     </p>
     <p>
-      End time: <%= @meeting.end_time %>
+      End time: <%= @meeting.end_time.strftime("%H:%M %P") %>
     </p>
     <p>
       Location: <%= @meeting.location %>
@@ -19,6 +19,23 @@
     <p>
       Agenda: <%= @meeting.agenda %>
     </p>
+
+    
+    <p>
+      Attendees:
+      <% if @meeting.attendees.count > 0 %>
+      <ul>
+        <% @meeting.attendees.each do |a| %>
+          <li>
+            <%= link_to a.name, attendee_path(a) %>
+          </li>
+        <% end %>
+      </ul>
+      <% else %>
+        Nobody is registered to attend.
+      <% end %>
+    </p>
+
     <p>
       <%= link_to "Edit Information", edit_meeting_path(@meeting) %>
     </p>

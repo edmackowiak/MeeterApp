@@ -26,12 +26,12 @@
 
       <div class="half">
         <%= label_tag(:start_time, "Start time: ") %>
-        <%= text_field_tag(:start_time, @meeting.start_time ) %>
+        <%= text_field_tag(:start_time, @meeting.start_time.strftime("%H:%M %P") ) %>
       </div>
 
       <div class="half last">
         <%= label_tag(:end_time, "End time: ") %>
-        <%= text_field_tag(:end_time, @meeting.end_time ) %>
+        <%= text_field_tag(:end_time, @meeting.end_time.strftime("%H:%M %P") ) %>
       </div>
 
       <div>

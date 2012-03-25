@@ -40,7 +40,8 @@
             <% end %>
             <strong><%= att.name %></strong>
             Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
-            <input type="checkbox" value="<%= att.id %>" name="attendees" />
+            <!-- <input type="checkbox" value="<%= att.id %>" name="attendees" /> -->
+            <%= check_box_tag "attendees[#{att.id}]" %>
           </li>
         <% end %>
       <% end %>
