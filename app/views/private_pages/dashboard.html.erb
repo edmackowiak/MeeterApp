@@ -73,31 +73,31 @@
         			}
         		},
         		series: [{
-        			name: 'Meeting History',
+        			name: 'Meeting History',  /* IMPORTANT: Don't skip months, just put a 0 for the y if there wasn't any meetings that month. */
         			data: [{
                         x: 1,
-                        y: 10000
+                        y: 1000
         			}, {
                         x: 2,
-                        y: 20000
+                        y: 2000
         			},{
                         x: 3,
-                        y: 10000
+                        y: 1000
         			},{
                         x: 4,
-                        y: 25000
+                        y: 2500
         			},{
                         x: 5,
-                        y: 41000
+                        y: 4100
         			},{
                         x: 6,
-                        y: 10000
+                        y: 1000
         			},{
                         x: 7,
                         y: 0
         			},{
                         x: 8,
-                        y: 24000
+                        y: 2400
         			}]
         		}]
         	});
@@ -114,7 +114,7 @@
   <article class="bubble half last">
     <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
     <h2>Total cost of meetings this year</h2>
-    <p class="big-text">$125,385</p>
+    <p class="big-text">$25,385</p>
   </article>
 
 </div>
