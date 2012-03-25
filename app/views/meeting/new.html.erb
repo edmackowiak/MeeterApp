@@ -1,5 +1,9 @@
 <% content_for :before_sidebar do %>
-  <%= form_for(create_meeting_path) do %>
+  <%= form_tag(create_meeting_path) %>
+<% end %>
+
+<% content_for(:after_content) do %>
+  </form>
 <% end %>
 
 
@@ -44,5 +48,7 @@
         <%= submit_tag("Submit") %>
       </p>
 
-    <% end %>
+    
+  <%= yield :after_content %>
 </div>
+
