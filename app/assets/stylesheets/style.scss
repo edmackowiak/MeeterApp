@@ -35,7 +35,7 @@ nav{
     margin: 80px auto;
 }
 
-.registrations.new .wrap, .sessions.new .wrap, .mini .wrap{
+.registrations.new .wrap, .sessions.new .wrap, .mini .wrap, .home .wrap{
     max-width: 400px;
 }
 
@@ -552,6 +552,39 @@ header.primary{
         }
     }
 }
+
+// ******************************************************
+//  Home
+
+.home{
+    .banner{
+        @include border-radius;
+        padding: 5px;
+        background: #fff;
+        margin-bottom: $gutter / 2;
+    }
+    .page{
+        min-height: 0;
+        
+        p{
+            margin-top: 0;
+        }
+        
+        .button{
+            display: block;
+            text-align: center;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .secondary{
+            text-align: center;
+            font-size: 12px;
+            display: block;
+        }
+    }
+}
+// ******************************************************
+//  Plugins
 
 .modal{
     display: none;

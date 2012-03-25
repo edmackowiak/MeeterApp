@@ -23,6 +23,8 @@
 
     <% else # no curent user %>
     <% end %>
+    
+    <%= yield :before_page %>
     <section class="page">
       <%= yield %>
     </section>
