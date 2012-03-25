@@ -15,6 +15,17 @@ $(function(){
         e.preventDefault();
     });
     
+    if( $('body').hasClass('meeting') && ( $('body').hasClass('new') || $('body').hasClass('edit') )){
+        var $this = $('.sidebar nav li:last-child a');
+        
+        // Highlight tab
+        $('.sidebar nav li').removeClass('active');
+        $this.parent().addClass('active');
+        
+        $('.tab').hide();
+        $('.' + $this.attr('href') + '-tab').show();;
+    }
+    
     // Equal Heights
     $(window).load(function(){
         var page_height = $('.page').height();
