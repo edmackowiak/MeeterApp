@@ -41,11 +41,13 @@ class MeetingController < ApplicationController
     @meeting.location = params[:location]
     @meeting.agenda = params[:agenda]
 
-    @meeting.attendees.reset
+    @meeting.attendees.clear
+    logger.debug '######## cleared attendees'
     # deal with the selected checkboxes
     if params[:attendees]
-      params[:attendees].each do |a|
+      params[:attendees].each do |a,k|
         @meeting.attendees.push Attendee.find(a)
+        logger.debug "######## push, id #{a}"
       end
     end
 

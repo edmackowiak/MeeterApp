@@ -27,7 +27,7 @@
       <ul>
         <% @meeting.attendees.each do |a| %>
           <li>
-            <%= link_to a.name, attendee_path(a) %>
+            <%= link_to a.name, '#' %>
           </li>
         <% end %>
       </ul>
