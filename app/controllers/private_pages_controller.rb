@@ -5,7 +5,7 @@ class PrivatePagesController < ApplicationController
   before_filter :authenticate_user!
 
   def dashboard
-    @number_of_meetings = Meeting.count
+    @number_of_meetings = current_user.meetings.count
 
     @total_cost = 0
     @month_cost = Array.new(12)
@@ -14,7 +14,7 @@ class PrivatePagesController < ApplicationController
       @month_cost[i] = 0
     end
 
-    Meeting.all.each do |m|
+    current_user.meetings.all.each do |m|
       @total_cost += m.cost
       month = m.date.month
       @month_cost[month] += m.cost
