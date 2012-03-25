@@ -17,6 +17,7 @@ class UserController < ApplicationController
   end
 
   def update
+
     @user = User.find(params[:id])
     @attendee = @user.attendee
 
@@ -26,6 +27,7 @@ class UserController < ApplicationController
     @attendee.email = @user.email
 
     @attendee.save
+    @user.save
 
     redirect_to @user, notice: "Successfully updated user."
   end
@@ -39,6 +41,7 @@ class UserController < ApplicationController
 
     current_user.group.attendees.push @attendee 
     @attendee.save
+    @attendee.user.save
 
     redirect_to dashboard_path, notice: "Successfully updated user."
   end
