@@ -30,14 +30,16 @@
 
     <ul class="items people">
       <% get_attendees_to_display.each do |att| %>
-        <li>
-          <% if att.email? %>
-            <img src=<%= Gravatar.new(att.email).image_url %> alt="Name" class="avatar" />
-          <% end %>
-          <strong><%= att.name %></strong>
-          Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
-          <input type="checkbox" value="<%= att.id %>" name="attendees" />
-        </li>
+        <% if att.name? %>
+          <li>
+            <% if att.email? %>
+              <img src=<%= Gravatar.new(att.email).image_url %> alt="Name" class="avatar" />
+            <% end %>
+            <strong><%= att.name %></strong>
+            Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
+            <input type="checkbox" value="<%= att.id %>" name="attendees" />
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
