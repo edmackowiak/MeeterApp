@@ -1,30 +1,27 @@
 <header>
   <h1><%= @meeting.title %></h1>
+  <p><%= @meeting.date %> at <%= @meeting.start_time.strftime("%H:%M %P") %><br />
+  <%= @meeting.location %></p>
 </header>
 
 <div class="content">
-  <article class="bubble">
-    <p>
-      Date: <%= @meeting.date %>
-    </p>
-    <p>
-      Start time: <%= @meeting.start_time.strftime("%H:%M %P") %>
-    </p>
-    <p>
-      End time: <%= @meeting.end_time.strftime("%H:%M %P") %>
-    </p>
-    <p>
-      Location: <%= @meeting.location %>
-    </p>
-    <p>
-      Agenda: <%= @meeting.agenda %>
-    </p>
-
+    <%#= @meeting.end_time.strftime("%H:%M %P") %>
     
-    <p>
-      Attendees:
+    <article class="bubble">
+        <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
+        <h2>This will meeting will cost your company:</h2>
+        <p class="big-text high">$125,385</p>
+    </article>
+    
+    <article class="text-block">
+        <h2>Agenda</h2>
+        <p><%= @meeting.agenda %></p>
+    </article>
+    
+    <article class="bubble">
+    <h2>Attendees</h2>
       <% if @meeting.attendees.count > 0 %>
-      <ul>
+      <ul class="people-list">
         <% @meeting.attendees.each do |a| %>
           <li>
             <%= link_to a.name, '#' %>
@@ -34,11 +31,7 @@
       <% else %>
         Nobody is registered to attend.
       <% end %>
-    </p>
-
-    <p>
-      <%= link_to "Edit Information", edit_meeting_path(@meeting) %>
-    </p>
-
-  </article>
+    </article>
+    
+    <p><%= link_to "Edit meeting details", edit_meeting_path(@meeting) %></p>
 </div>
