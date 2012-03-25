@@ -10,7 +10,7 @@
     <article class="bubble">
         <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
         <h2>This will meeting will cost your company:</h2>
-        <p class="big-text high">$125,385</p>
+        <p class="big-text high"><%= @meeting.cost %></p>
     </article>
     
     <article class="text-block">

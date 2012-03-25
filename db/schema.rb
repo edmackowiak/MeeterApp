@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20120325025401) do
     t.time     "end_time"
     t.string   "location"
     t.string   "agenda"
+    t.decimal  "cost"
     t.integer  "user_id"
   end
 

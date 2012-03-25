@@ -6,5 +6,6 @@ class AddAttributesToMeeting < ActiveRecord::Migration
     add_column :meetings, :end_time, :time
     add_column :meetings, :location, :string
     add_column :meetings, :agenda, :string
+    add_column :meetings, :cost, :decimal
   end
 end
