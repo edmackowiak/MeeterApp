@@ -29,6 +29,7 @@ nav{
 }
 
 .wrap{
+    @include clearfix;
     width: 90%;
     max-width: $full + px;
     margin: 80px auto;
@@ -76,12 +77,23 @@ nav{
     }
 }
 
+footer.primary{
+    clear: both;
+    font-size: 12px;
+    text-align: center;
+    margin-top: $gutter;
+}
+
 // ******************************************************
 //  Global styles
 
 a{
     text-decoration: none;
     color: $link_color;
+    
+    &:hover{
+        color: darken($link_color, 20%);
+    }
 }
 
 h1, h2, h3{
