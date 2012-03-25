@@ -1,3 +1,4 @@
+<%= yield :before_sidebar %>
 <section class="sidebar">
   <nav>
     <ul>
@@ -20,18 +21,6 @@
           <strong><%= meeting.name %></strong>
         </li>
       <% end %>
-      <!-- <li class="active">
-          <a href="#">
-              <strong>Design Research</strong>
-              March 29, 2012
-          </a>
-      </li>
-      <li>
-          <a href="#">
-              <strong>Design Research</strong>
-              March 29, 2012
-          </a>
-      </li> -->
     </ul>
 
   </div>
@@ -47,6 +36,7 @@
           <% end %>
           <strong><%= att.name %></strong>
           Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
+          <input type="checkbox" value="<%= att.id %>" name="attendees" />
         </li>
       <% end %>
     </ul>
