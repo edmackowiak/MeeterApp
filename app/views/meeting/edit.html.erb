@@ -26,12 +26,12 @@
 
       <div class="half">
         <%= label_tag(:start_time, "Start time: ") %>
-        <%= text_field_tag(:start_time, @meeting.start_time.strftime("%H:%M %P") ) %>
+        <%= text_field_tag(:start_time, @meeting.start_time.strftime("%l:%M %P") ) %>
       </div>
 
       <div class="half last">
         <%= label_tag(:end_time, "End time: ") %>
-        <%= text_field_tag(:end_time, @meeting.end_time.strftime("%H:%M %P") ) %>
+        <%= text_field_tag(:end_time, @meeting.end_time.strftime("%l:%M %P") ) %>
       </div>
 
       <div>
@@ -42,6 +42,10 @@
       <div>
         <%= label_tag(:agenda, "Agenda: ") %>
         <%= text_area_tag(:agenda, @meeting.agenda ) %>
+      </div>
+
+      <div>
+        <strong>Choose meeting attendees by selecting users on the left</strong>
       </div>
 
       <p>

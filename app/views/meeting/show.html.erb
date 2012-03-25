@@ -1,6 +1,6 @@
 <header>
   <h1><%= @meeting.title %></h1>
-  <p><%= @meeting.date %> at <%= @meeting.start_time.strftime("%H:%M %P") %><br />
+  <p><%= @meeting.date.strftime("%B #{@meeting.date.day.ordinalize}, %Y") %> at <%= @meeting.start_time.strftime("%H:%M %P") %><br />
   <%= @meeting.location %></p>
 </header>
 
@@ -10,7 +10,7 @@
     <article class="bubble">
         <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
         <h2>This will meeting will cost your company:</h2>
-        <p class="big-text high"><%= @meeting.cost %></p>
+        <p class="big-text high"><%= number_to_currency(@meeting.cost , :unit => "$") %></p>
     </article>
     
     <article class="text-block">
@@ -24,6 +24,7 @@
       <ul class="people-list">
         <% @meeting.attendees.each do |a| %>
           <li>
+            <img src=<%= Gravatar.new(a.email).image_url %> alt="Name" class="avatar" />
             <%= link_to a.name, '#' %>
           </li>
         <% end %>

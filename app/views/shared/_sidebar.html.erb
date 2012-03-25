@@ -20,7 +20,7 @@
         <a href=<%= meeting_path(meeting) %>>
           <li>
             <strong><%= meeting.title %></strong>
-            <%= meeting.date %>
+            <%= meeting.date.strftime("%B #{meeting.date.day.ordinalize}, %Y") %>
           </li>
         </a>
       <% end %>

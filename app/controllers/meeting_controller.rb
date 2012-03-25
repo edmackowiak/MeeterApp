@@ -16,10 +16,17 @@ class MeetingController < ApplicationController
 
     @meeting.user = current_user
 
+
+    @meeting.cost = 0;
+
+    time_in_hours = ( @meeting.end_time - @meeting.start_time ).abs / 1.hour
+
     # deal with the selected checkboxes
     if params[:attendees]
-      params[:attendees].each do |a|
-        @meeting.attendees.push Attendee.find(a)
+      params[:attendees].each do |a,k|
+        @att = Attendee.find(a)
+        @meeting.attendees.push @att
+        @meeting.cost += @att.hourly_rate * time_in_hours
       end
     end
 
@@ -42,12 +49,17 @@ class MeetingController < ApplicationController
     @meeting.agenda = params[:agenda]
 
     @meeting.attendees.clear
-    logger.debug '######## cleared attendees'
+
+    @meeting.cost = 0;
+
+    time_in_hours = ( @meeting.end_time - @meeting.start_time ).abs / 1.hour
+
     # deal with the selected checkboxes
     if params[:attendees]
       params[:attendees].each do |a,k|
-        @meeting.attendees.push Attendee.find(a)
-        logger.debug "######## push, id #{a}"
+        @att = Attendee.find(a)
+        @meeting.attendees.push @att
+        @meeting.cost += @att.hourly_rate * time_in_hours
       end
     end
 
