@@ -35,7 +35,7 @@ nav{
     margin: 80px auto;
 }
 
-.registrations.new .wrap, .sessions.new .wrap, .mini .wrap, .home .wrap{
+.registrations.new .wrap, .sessions.new .wrap, .mini .wrap{
     max-width: 400px;
 }
 
@@ -556,7 +556,7 @@ header.primary{
 // ******************************************************
 //  Home
 
-.home{
+.mini.home{
     .banner{
         @include border-radius;
         padding: 5px;
@@ -565,6 +565,7 @@ header.primary{
     }
     .page{
         min-height: 0;
+        width: 100%;
         
         p{
             margin-top: 0;
