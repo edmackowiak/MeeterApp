@@ -1,0 +1,54 @@
+<% content_for :before_sidebar do %>
+  <%= form_tag(@meeting, :method => 'put') %>
+<% end %>
+
+<% content_for(:after_content) do %>
+  </form>
+<% end %>
+
+
+<header>
+  <h1>Edit meeting</h1>
+</header>
+
+<div class="content">
+    
+           
+      <div class="half">
+        <%= label_tag(:title, "Meeting title: ") %>
+        <%= text_field_tag(:title, @meeting.title ) %>
+      </div>
+
+      <div class="half last">
+        <%= label_tag(:date, "Date: ") %>
+        <%= text_field_tag(:date, @meeting.date ) %>
+      </div>
+
+      <div class="half">
+        <%= label_tag(:start_time, "Start time: ") %>
+        <%= text_field_tag(:start_time, @meeting.start_time ) %>
+      </div>
+
+      <div class="half last">
+        <%= label_tag(:end_time, "End time: ") %>
+        <%= text_field_tag(:end_time, @meeting.end_time ) %>
+      </div>
+
+      <div>
+        <%= label_tag(:location, "Location: ") %>
+        <%= text_field_tag(:location, @meeting.location ) %>
+      </div>
+
+      <div>
+        <%= label_tag(:agenda, "Agenda: ") %>
+        <%= text_area_tag(:agenda, @meeting.agenda ) %>
+      </div>
+
+      <p>
+        <%= submit_tag("Submit") %>
+      </p>
+
+    
+  <%= yield :after_content %>
+</div>
+

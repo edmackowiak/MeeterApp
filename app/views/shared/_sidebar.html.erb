@@ -17,9 +17,12 @@
 
     <ul class="items">
       <% get_meetings_to_display.each do |meeting| %>
-        <li>
-          <strong><%= meeting.name %></strong>
-        </li>
+        <a href=<%= meeting_path(meeting) %>>
+          <li>
+            <strong><%= meeting.title %></strong>
+            <%= meeting.date %>
+          </li>
+        </a>
       <% end %>
     </ul>
 

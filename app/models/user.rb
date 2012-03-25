@@ -10,5 +10,7 @@ class User < ActiveRecord::Base
   has_one :attendee
 
   has_one :group
+
+  has_many :meetings
   
 end

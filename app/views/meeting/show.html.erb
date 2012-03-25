@@ -1,0 +1,27 @@
+<header>
+  <h1><%= @meeting.title %></h1>
+</header>
+
+<div class="content">
+  <article class="bubble">
+    <p>
+      Date: <%= @meeting.date %>
+    </p>
+    <p>
+      Start time: <%= @meeting.start_time %>
+    </p>
+    <p>
+      End time: <%= @meeting.end_time %>
+    </p>
+    <p>
+      Location: <%= @meeting.location %>
+    </p>
+    <p>
+      Agenda: <%= @meeting.agenda %>
+    </p>
+    <p>
+      <%= link_to "Edit Information", edit_meeting_path(@meeting) %>
+    </p>
+
+  </article>
+</div>
