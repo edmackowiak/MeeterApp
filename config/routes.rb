@@ -11,6 +11,8 @@ MeeterApp::Application.routes.draw do
 
   match 'create_user_without_usermodel' => 'user#create'
 
+  match 'create_meeting' => 'meeting#create'
+
   resources :user, :attendee, :meeting
 
 

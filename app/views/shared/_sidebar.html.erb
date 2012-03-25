@@ -13,7 +13,7 @@
 
   <div class="meetings-tab tab">
 
-    <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '/meeting/create', :class => 'new new-meeting' %>
+    <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", new_meeting_path, :class => 'new new-meeting' %>
 
     <ul class="items">
       <% get_meetings_to_display.each do |meeting| %>
