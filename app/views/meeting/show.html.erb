@@ -6,12 +6,33 @@
 
 <div class="content">
     <%#= @meeting.end_time.strftime("%H:%M %P") %>
-    
-    <article class="bubble">
+    <% if @pricey_people %>
+      <article class="bubble half">
+    <% else %>
+      <article class="bubble">
+    <% end %>
         <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
-        <h2>This will meeting will cost your company:</h2>
+        <h2>Whoa, this will cost your company at least:</h2>
         <p class="big-text high"><%= number_to_currency(@meeting.cost , :unit => "$") %></p>
     </article>
+
+
+    <% if @pricey_people %>
+      <article class="bubble half last">
+        <%= image_tag "date-bg.png", :alt => "", :class => "bg-img" %>
+        <h2>These people are pretty pricey:</h2>
+        <ul class="people-list">
+          <% @pricey_people.each do |a| %>
+            <li>
+              <img src=<%= Gravatar.new(a.email).image_url %> alt="Name" class="avatar" />
+              <%= link_to a.name, '#' %>,
+              <%= a.position %>
+            </li>
+          <% end %>
+        </ul>
+      </article>
+    <% end %>
+
     
     <article class="text-block">
         <h2>Agenda</h2>
@@ -19,13 +40,15 @@
     </article>
     
     <article class="bubble">
-    <h2>Attendees</h2>
+      <h2>Attendees</h2>
       <% if @meeting.attendees.count > 0 %>
       <ul class="people-list">
         <% @meeting.attendees.each do |a| %>
           <li>
+            <%= link_to image_tag('remove.png', :alt => "Remove"), '#remove', :class => "remove" %>
             <img src=<%= Gravatar.new(a.email).image_url %> alt="Name" class="avatar" />
-            <%= link_to a.name, '#' %>
+            <strong><%= a.name %></strong>
+            <%= a.position %>
           </li>
         <% end %>
       </ul>

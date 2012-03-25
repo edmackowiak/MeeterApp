@@ -2,6 +2,12 @@ class MeetingController < ApplicationController
 
   def show
     @meeting = Meeting.find(params[:id])
+
+    @active_meeting_id = @meeting.id
+
+    if @meeting.attendees.count > 2
+      @pricey_people = @meeting.attendees.find(:all, :limit => 2, :order => 'hourly_rate DESC')
+    end
   end
 
 
@@ -37,6 +43,7 @@ class MeetingController < ApplicationController
 
   def edit
     @meeting = Meeting.find(params[:id])
+    @active_meeting_id = @meeting.id
   end
 
   def update

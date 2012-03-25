@@ -18,7 +18,7 @@
     <ul class="items">
       <% get_meetings_to_display.each do |meeting| %>
         <a href=<%= meeting_path(meeting) %>>
-          <li>
+          <li <% if @active_meeting_id and @active_meeting_id == meeting.id %> class="active" <% end %>>
             <strong><%= meeting.title %></strong>
             <%= meeting.date.strftime("%B #{meeting.date.day.ordinalize}, %Y") %>
           </li>
