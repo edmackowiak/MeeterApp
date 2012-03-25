@@ -1,6 +1,6 @@
 <header>
   <h1><%= @meeting.title %></h1>
-  <p><%= @meeting.date.strftime("%B #{@meeting.date.day.ordinalize}, %Y") %> at <%= @meeting.start_time.strftime("%H:%M %P") %><br />
+  <p><%= @meeting.date.strftime("%B #{@meeting.date.day.ordinalize}, %Y") %> at <%= @meeting.start_time.strftime("%l:%M %P") %><br />
   <%= @meeting.location %></p>
 </header>
 
