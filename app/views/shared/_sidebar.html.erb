@@ -12,7 +12,7 @@
 
   <div class="meetings-tab tab">
 
-    <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '/new-meeting.html', :class => 'new new-meeting' %>
+    <%= link_to image_tag("plus.png", :alt => "+" ) + "Create Meeting", '/meeting/create', :class => 'new new-meeting' %>
 
     <ul class="items">
       <% get_meetings_to_display.each do |meeting| %>
@@ -49,17 +49,6 @@
           Hourly rate: <%= number_to_currency( att.hourly_rate, :unit => '$' ) %>
         </li>
       <% end %>
-<!-- 
-              <li>
-                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
-                  <strong>Don Draper</strong>
-                  CEO
-              </li>
-              <li>
-                  <img src="/assets/avatar.png" alt="Name" class="avatar" />
-                  <strong>Sawyer Hollenshead</strong>
-                  Art Director
-              </li> -->
     </ul>
   </div>
 
