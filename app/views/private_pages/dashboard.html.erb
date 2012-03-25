@@ -75,29 +75,32 @@
         		series: [{
         			name: 'Meeting History',  /* IMPORTANT: Don't skip months, just put a 0 for the y if there wasn't any meetings that month. */
         			data: [{
-                        x: 1,
-                        y: 1000
+                        x: 0,
+                        y: <%= @month_cost[1] %>
         			}, {
+                        x: 1,
+                        y: <%= @month_cost[2] %>
+                    }, {
                         x: 2,
-                        y: 2000
+                        y: <%= @month_cost[3] %>
         			},{
                         x: 3,
-                        y: 1000
+                        y: <%= @month_cost[4] %>
         			},{
                         x: 4,
-                        y: 2500
+                        y: <%= @month_cost[5] %>
         			},{
                         x: 5,
-                        y: 4100
+                        y: <%= @month_cost[6] %>
         			},{
                         x: 6,
-                        y: 1000
+                        y: <%= @month_cost[7] %>
         			},{
                         x: 7,
-                        y: 0
+                        y: <%= @month_cost[8] %>
         			},{
                         x: 8,
-                        y: 2400
+                        y: <%= @month_cost[9] %>
         			}]
         		}]
         	});
@@ -108,13 +111,13 @@
   <article class="bubble half">
     <%= image_tag "date-bg.png", :alt => "", :class => "bg-img" %>
     <h2>Total meetings this year</h2>
-    <p class="big-text">85</p>
+    <p class="big-text"><%= @number_of_meetings %></p>
   </article>
   
   <article class="bubble half last">
     <%= image_tag "cash-bg.png", :alt => "", :class => "bg-img cash-bg" %>
     <h2>Total cost of meetings this year</h2>
-    <p class="big-text">$25,385</p>
+    <p class="big-text"><%= number_to_currency(@total_cost, :unit => '$') %></p>
   </article>
 
 </div>
