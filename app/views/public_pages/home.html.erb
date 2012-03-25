@@ -1,11 +1,12 @@
 <% body_classes << "full-page" %>
-
-<header>
-    <h1>Welcome!</h1>
-</header>
+<% content_for :before_page do %>
+<div class="banner">
+    <%= image_tag( "home-preview.jpg", :alt => "MeeterApp" ) %>
+</div>
+<% end %>
 
 <div class="content">
-<p>
-Please <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> to continue.
-</p>
+    <p>MeeterApp is a tool that allows companies to organize meetings and measure the financial and productive impact that those meetings have on the company, with the ultimate goal being the end of unnecessary meetings.</p>
+    <%= link_to "Sign Up", new_user_registration_path, :class => 'button' %>
+    <%= link_to "or sign in", new_user_session_path, :class => 'secondary' %>
 </div>

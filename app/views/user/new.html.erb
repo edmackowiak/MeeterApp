@@ -3,33 +3,31 @@
 </header>
 
 <div class="content">
-  <article class="bubble">
     <%= form_tag(create_user_without_usermodel_path) do %>
            
-      <p>
+      <div class="half">
         <%= label_tag(:name, "Name: ") %>
         <%= text_field_tag(:name ) %>
-      </p>
+      </div>
 
-      <p>
+      <div class="half last">
         <%= label_tag(:email, "Email: ") %>
         <%= text_field_tag(:email ) %>
-      </p>
+      </div>
 
-      <p>
+      <div class="half">
         <%= label_tag(:title, "Title: ") %>
         <%= text_field_tag(:title ) %>
-      </p>
+      </div>
 
-      <p>
+      <div class="half last">
         <%= label_tag(:hourly_rate, "Hourly Rate: (Dollars) ") %>
         <%= text_field_tag(:hourly_rate ) %>
-      </p>
+      </div>
 
       <p>
         <%= submit_tag("Submit") %>
       </p>
 
     <% end %>
-  </article>
 </div>

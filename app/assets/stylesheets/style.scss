@@ -29,12 +29,13 @@ nav{
 }
 
 .wrap{
+    @include clearfix;
     width: 90%;
     max-width: $full + px;
     margin: 80px auto;
 }
 
-.registrations.new .wrap, .sessions.new .wrap, .mini .wrap{
+.registrations.new .wrap, .sessions.new .wrap, .mini .wrap, .home .wrap{
     max-width: 400px;
 }
 
@@ -76,12 +77,23 @@ nav{
     }
 }
 
+footer.primary{
+    clear: both;
+    font-size: 12px;
+    text-align: center;
+    margin-top: $gutter;
+}
+
 // ******************************************************
 //  Global styles
 
 a{
     text-decoration: none;
     color: $link_color;
+    
+    &:hover{
+        color: darken($link_color, 20%);
+    }
 }
 
 h1, h2, h3{
@@ -138,6 +150,10 @@ input[type="submit"], button, .button{
     color: #fff;
     font-weight: bold;
     text-shadow: 0 1px 1px rgba(#000, 0.2);
+    
+    &:hover{
+        color: #fff;
+    }
 }
 
 // ******************************************************
@@ -537,11 +553,48 @@ header.primary{
     }
 }
 
+// ******************************************************
+//  Home
+
+.home{
+    .banner{
+        @include border-radius;
+        padding: 5px;
+        background: #fff;
+        margin-bottom: $gutter / 2;
+    }
+    .page{
+        min-height: 0;
+        
+        p{
+            margin-top: 0;
+        }
+        
+        .button{
+            display: block;
+            text-align: center;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .secondary{
+            text-align: center;
+            font-size: 12px;
+            display: block;
+        }
+    }
+}
+// ******************************************************
+//  Plugins
+
 .modal{
     display: none;
     
     .modal-body{
         padding: 0;
+        
+        input[type="submit"]{
+            display: none;
+        }
     }
     
     .page{
