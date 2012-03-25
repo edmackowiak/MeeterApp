@@ -150,6 +150,10 @@ input[type="submit"], button, .button{
     color: #fff;
     font-weight: bold;
     text-shadow: 0 1px 1px rgba(#000, 0.2);
+    
+    &:hover{
+        color: #fff;
+    }
 }
 
 // ******************************************************
@@ -554,6 +558,10 @@ header.primary{
     
     .modal-body{
         padding: 0;
+        
+        input[type="submit"]{
+            display: none;
+        }
     }
     
     .page{
