@@ -30,7 +30,7 @@ $(function(){
     });
     
     // Modals
-    $('.sidebar .new').on('click', function(e){
+    $('.sidebar .new-person').on('click', function(e){
         e.preventDefault();
         
         $('.modal-bg').fadeIn();
