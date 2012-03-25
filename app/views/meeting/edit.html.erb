@@ -52,6 +52,10 @@
         <%= submit_tag("Submit") %>
       </p>
 
+      <p>
+        <%= link_to "Delete this meeting", @meeting, :method => 'delete', :confirm => "Do you really want to delete this meeting?" %>
+      </p>
+
     
   <%= yield :after_content %>
 </div>

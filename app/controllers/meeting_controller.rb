@@ -75,4 +75,11 @@ class MeetingController < ApplicationController
     redirect_to meeting_path( @meeting ), notice: "Successfully updated meeting"
   end
 
+  def destroy
+    @meeting = Meeting.find(params[:id])
+    @meeting.delete
+
+    redirect_to dashboard_path, notice: "Meeting deleted successfully"
+  end
+
 end
