@@ -41,7 +41,7 @@ class UserController < ApplicationController
 
     current_user.group.attendees.push @attendee 
     @attendee.save
-    @attendee.user.save
+    
 
     redirect_to dashboard_path, notice: "Successfully updated user."
   end
